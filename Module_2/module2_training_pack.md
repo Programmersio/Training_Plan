@@ -137,6 +137,7 @@ This training pack includes the following files:
 - **labs/lab4.md** – Static and dynamic review tasks for verifying AI‑generated code.
 - **assessments/quiz.md** – A quiz for evaluating knowledge of the module.
 - **assessment_reflection.md** – A template for learners to summarise their experience and list effective prompts.
-- **slides/module2.pptx** – A PowerPoint deck summarising the module.  Use a separate script or your preferred tool to create slides based on the speaker notes above.
+- **slides/module2.pptx** – The summary slide deck for Module 2 (see `Module_2/slides/module2.pptx`).
+- **Slides/** – Detailed slide decks for each module (see `Slides/` at the root of the repository).
 
 Use this package as the foundation for your training sessions on AI‑augmented development.
