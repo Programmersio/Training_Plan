@@ -75,12 +75,7 @@ This lab introduces you to GitHub Copilot as an inline coding assistant. You wil
 ### 4. Run Unit Tests
 
 1. Open a terminal and navigate to the root of the training repository.
-2. Run the tests with `pytest tests`. Verify that the tests for data processing pass. If any fail, adjust your code and rerun until all tests succeed.
-3. To check your async API client implementation, run:
-   ```powershell
-   pytest tests/test_api_client.py
-   ```
-   This will run the provided tests for the `ApiClient` async methods using mocked HTTP requests. All tests should pass if your implementation is correct.
+2. Run the tests with `pytest tests`. Verify that the tests for data processing and file I/O pass. If any fail, adjust your code and rerun until all tests succeed.
 
 ## Reflection Questions
 

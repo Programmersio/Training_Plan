@@ -1,10 +1,14 @@
 # Lab 3 – Prompt Engineering Drills
 
+## Duration
+
+**Estimated time:** 50–60 minutes.
+
 ## Objectives
 
 This lab develops your prompt engineering skills.  You will practice writing detailed instructions for AI models, specifying inputs, outputs and algorithms, and iterating based on the results.  You will also experiment with documentation and diagram generation to accompany your code.
 
-## Prerequisites
+## Prerequisites                                            
 
 - Completion of Lab 1 and Lab 2.
 - Understanding of basic data structures and algorithms (binary search, grouping functions).

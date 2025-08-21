@@ -8,12 +8,10 @@ operations and leaves implementation details to be filled in.  Use unit tests
 and mocking techniques to verify the behaviour.
 """
 
-from typing import Any, Dict, Optional
 
-try:
-    import requests
-except ImportError:
-    requests = None  # type: ignore
+from typing import Any, Dict, Optional
+import httpx
+
 
 
 class ApiClient:
@@ -41,49 +39,11 @@ class ApiClient:
         self.headers = headers or {}
         self.timeout = timeout
 
-    def get(self, path: str, params: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
-        """Send a GET request to the API and return the JSON response.
+    # Use httpx to send an asynchronous GET request to the path appended to base_url. Include optional headers and query parameters. Raise for non‑2xx responses and return the parsed JSON.
+    async def get(self, path: str, params: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+        pass
+    
 
-        The method should build the full URL from ``self.base_url`` and ``path``,
-        include ``self.headers`` and query parameters, send the request, check
-        the status code and return the parsed JSON content.  If the response
-        indicates an error (non‑2xx status), raise an exception with an
-        informative message.  Use the ``requests`` library if available.
-
-        Parameters
-        ----------
-        path : str
-            The resource path relative to the base URL (e.g. ``"/users"``).
-        params : Dict[str, Any], optional
-            Query parameters to include in the request.
-
-        Returns
-        -------
-        Dict[str, Any]
-            The response body parsed from JSON.
-        """
-        # TODO: implement this method using an AI coding assistant
-        raise NotImplementedError
-
-    def post(self, path: str, data: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
-        """Send a POST request to the API and return the JSON response.
-
-        Build the full URL, include headers and send a POST request with a
-        JSON body derived from ``data``.  Handle errors similarly to the GET
-        method and return the parsed response.  Consider adding basic retry
-        logic if the request fails due to transient network errors.
-
-        Parameters
-        ----------
-        path : str
-            The resource path relative to the base URL (e.g. ``"/users"``).
-        data : Dict[str, Any], optional
-            A dictionary representing the JSON body of the request.
-
-        Returns
-        -------
-        Dict[str, Any]
-            The response body parsed from JSON.
-        """
-        # TODO: implement this method using an AI coding assistant
-        raise NotImplementedError
+    # Use httpx to send an asynchronous POST request with a JSON body to the path appended to base_url. Include optional headers. Raise on error and return the JSON response.
+    async def post(self, path: str, data: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+        pass

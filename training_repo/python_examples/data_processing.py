@@ -1,4 +1,4 @@
-#
+
 import statistics
 
 def calculate_median(scores: list[int]) -> float:
@@ -46,6 +46,7 @@ Instructions:
 from typing import Dict, List, Tuple
 
 
+    
 def calculate_student_statistics(scores: List[float]) -> Tuple[float, float, float]:
     """Calculate summary statistics for a list of student scores.
 
@@ -73,8 +74,13 @@ def calculate_student_statistics(scores: List[float]) -> Tuple[float, float, flo
     >>> calculate_student_statistics([100.0, 75.5])
     (87.75, 87.75, 100.0)
     """
-    # TODO: implement this function using an AI coding assistant
-    raise NotImplementedError
+    # Compute the average (rounded to two decimals), median and maximum score from a list of numbers.  Raise a ValueError if the list is empty.
+    pass
+
+
+
+# Scale each score so that the largest score equals the target value (default 100).  Preserve the original order.  Return an empty list if input is empty; return a list of zeros if the maximum is zero.
+from typing import List, Dict       
 
 
 def normalise_scores(scores: List[float], target: float = 100.0) -> List[float]:
@@ -105,40 +111,40 @@ def normalise_scores(scores: List[float], target: float = 100.0) -> List[float]:
     >>> normalise_scores([], target=100)
     []
     """
-    # TODO: implement this function using an AI coding assistant
-    raise NotImplementedError
+    # Scale each score so that the largest score equals the target value (default 100).  Preserve the original order.  Return an empty list if input is empty; return a list of zeros if the maximum is zero.
+    pass
 
 
-def group_by_grade(scores: List[float]) -> Dict[str, List[float]]:
-    """Group scores into letter grades.
-
-    Categorise each numeric score into letter grades using the following
-    scale:
-
-    * **A**: 90 – 100
-    * **B**: 80 – 89
-    * **C**: 70 – 79
-    * **D**: 60 – 69
-    * **F**: below 60
-
-    Return a dictionary where keys are letter grades and values are lists of
-    scores belonging to those grades.  Exclude grades that have no scores.
-    The order of grades in the resulting dictionary is not important.
-
-    Parameters
-    ----------
-    scores : List[float]
-        A list of numeric scores.
-
-    Returns
-    -------
-    Dict[str, List[float]]
-        A dictionary mapping letter grades to lists of scores.
-
-    Examples
-    --------
-    >>> group_by_grade([95, 82, 67, 50])
-    {'A': [95], 'B': [82], 'D': [67], 'F': [50]}
-    """
-    # TODO: implement this function using an AI coding assistant
-    raise NotImplementedError
+# def group_by_grade(scores: List[float]) -> Dict[str, List[float]]:
+#     """Group scores into letter grades.
+#
+#     Categorise each numeric score into letter grades using the following
+#     scale:
+#
+#     * **A**: 90 – 100
+#     * **B**: 80 – 89
+#     * **C**: 70 – 79
+#     * **D**: 60 – 69
+#     * **F**: below 60
+#
+#     Return a dictionary where keys are letter grades and values are lists of
+#     scores belonging to those grades.  Exclude grades that have no scores.
+#     The order of grades in the resulting dictionary is not important.
+#
+#     Parameters
+#     ----------
+#     scores : List[float]
+#         A list of numeric scores.
+#
+#     Returns
+#     -------
+#     Dict[str, List[float]]
+#         A dictionary mapping letter grades to lists of scores.
+#
+#     Examples
+#     --------
+#     >>> group_by_grade([95, 82, 67, 50])
+#     {'A': [95], 'B': [82], 'D': [67], 'F': [50]}
+#     """
+#     # TODO: implement this function using an AI coding assistant
+#     raise NotImplementedError
