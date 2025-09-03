@@ -1,11 +1,11 @@
 import pytest
-from python_examples.customer_utils import Customer, duplicate_logic_a, duplicate_logic_b, long_function
+from python_examples.customer_utils import CustomerName, duplicate_logic_a, duplicate_logic_b, long_function
 
 import pytest
-from python_examples.customer_utils import Customer, duplicate_logic_a, duplicate_logic_b, long_function
+from python_examples.customer_utils import CustomerName, duplicate_logic_a, duplicate_logic_b, long_function
 
 def test_customer_summary():
-    c = Customer(1, "Alice")
+    c = CustomerName(1, "Alice")
     assert c.get_summary() == "Customer 1: Alice"
 
 def test_duplicate_logic():

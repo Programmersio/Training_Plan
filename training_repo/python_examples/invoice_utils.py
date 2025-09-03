@@ -1,4 +1,4 @@
-class InvoiceAdd:
+class InvoiceAddRefactored:
     """A dummy class representing an invoice addition operation."""
     def __init__(self, invoice_id: int, amount: float):
         self.invoice_id = invoice_id

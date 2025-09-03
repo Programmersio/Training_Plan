@@ -1,9 +1,9 @@
 import pytest
-from python_examples.invoice_utils import InvoiceAdd, processLineItem1, processLineItem2
+from python_examples.invoice_utils import InvoiceAddRefactored, processLineItem1, processLineItem2
 
 def test_invoice_add_to_ledger():
     ledger = []
-    inv = InvoiceAdd(101, 250.0)
+    inv = InvoiceAddRefactored(101, 250.0)
     inv.add_to_ledger(ledger)
     assert ledger == [{'invoice_id': 101, 'amount': 250.0}]
 

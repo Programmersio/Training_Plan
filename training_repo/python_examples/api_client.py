@@ -41,9 +41,24 @@ class ApiClient:
 
     # Use httpx to send an asynchronous GET request to the path appended to base_url. Include optional headers and query parameters. Raise for non‑2xx responses and return the parsed JSON.
     async def get(self, path: str, params: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
-        pass
-    
+        url = f"{self.base_url}/{path.lstrip('/')}"
+        try:
+            response = await httpx.get(url, headers=self.headers, params=params, timeout=self.timeout)
+            response.raise_for_status()
+            return response.json()
+        except httpx.HTTPError as e:
+            # Handle HTTP errors (e.g. 4xx, 5xx)
+            print(f"Error fetching {url}: {e}")
+            raise
 
     # Use httpx to send an asynchronous POST request with a JSON body to the path appended to base_url. Include optional headers. Raise on error and return the JSON response.
     async def post(self, path: str, data: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
-        pass
+        url = f"{self.base_url}/{path.lstrip('/')}"
+        try:
+            response = await httpx.post(url, headers=self.headers, json=data, timeout=self.timeout)
+            response.raise_for_status()
+            return response.json()
+        except httpx.HTTPError as e:
+            # Handle HTTP errors (e.g. 4xx, 5xx)
+            print(f"Error posting to {url}: {e}")
+            raise

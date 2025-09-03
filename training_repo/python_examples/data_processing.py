@@ -48,6 +48,9 @@ from typing import Dict, List, Tuple
 
     
 def calculate_student_statistics(scores: List[float]) -> Tuple[float, float, float]:
+#Compute the average  (rounded to decimals), median and maximum score from a list of numbers. Raise the ValueError is list is empty.
+
+
     """Calculate summary statistics for a list of student scores.
 
     Given a list of numeric scores, return a tuple containing the average,
@@ -74,9 +77,16 @@ def calculate_student_statistics(scores: List[float]) -> Tuple[float, float, flo
     >>> calculate_student_statistics([100.0, 75.5])
     (87.75, 87.75, 100.0)
     """
-    # Compute the average (rounded to two decimals), median and maximum score from a list of numbers.  Raise a ValueError if the list is empty.
-    pass
 
+#Compute the average  (rounded to decimals), median and maximum score from a list of numbers. Raise the ValueError is list is empty.
+    if not scores:
+        raise ValueError("Input list is empty")
+
+    average = round(sum(scores) / len(scores), 2)
+    median = float(statistics.median(scores))
+    maximum = float(max(scores))
+
+    return average, median, maximum
 
 
 # Scale each score so that the largest score equals the target value (default 100).  Preserve the original order.  Return an empty list if input is empty; return a list of zeros if the maximum is zero.
@@ -112,7 +122,13 @@ def normalise_scores(scores: List[float], target: float = 100.0) -> List[float]:
     []
     """
     # Scale each score so that the largest score equals the target value (default 100).  Preserve the original order.  Return an empty list if input is empty; return a list of zeros if the maximum is zero.
-    pass
+    if not scores:
+        return []
+    max_score = max(scores)
+    if max_score == 0:
+        return [0.0 for _ in scores]
+    scale_factor = target / max_score
+    return [round(score * scale_factor, 2) for score in scores]
 
 
 # def group_by_grade(scores: List[float]) -> Dict[str, List[float]]:
